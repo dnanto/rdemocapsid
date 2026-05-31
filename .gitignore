@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+inst/htmlwidgets/lib/democapsid-2.2.5/democapsid.js
+inst/htmlwidgets/lib/paperjs-0.12.17/paper-full.js

@@ -1,0 +1,10 @@
+Package: rdemocapsid
+Title: R Democapsid
+Version: 0.0.0.9000
+Authors@R: 
+    person("Daniel", "Negrón", "Antonio", "dnegron2@gmu.edu", role = c("aut", "cre"))
+Description: Render viral capsid models.
+License: use_mit_license()
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 8.0.0

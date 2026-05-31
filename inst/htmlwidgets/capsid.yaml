@@ -1,0 +1,13 @@
+dependencies:
+  - name: paperjs
+    version: 0.12.17
+    src: htmlwidgets/lib/paperjs-0.12.17
+    script:
+      - paper-full.min.js
+  - name: democapsid
+    version: 2.2.5
+    src: htmlwidgets/lib/democapsid-2.2.5
+    script:
+      - democapsid.min.js
+
+script: rdemocapsid.js
