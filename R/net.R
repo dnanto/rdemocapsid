@@ -1,16 +1,15 @@
-#' capsid
+#' net
 #'
 #' description
 #'
 #' @import htmlwidgets
 #'
 #' @export
-capsid <- function(
-  h = 1, k = 0, H = NULL, K = NULL, t = capsid_turns,
-  L = capsid_tilings, a = capsid_axes,
-  R = 100, s = 0,
-  roll = -90, pitch = 0, yaw = 0,
-  penton_fiber = F, fiber_knob = F, facet_outline = F,
+net <- function(
+  h = 1, k = 0, H = NULL, K = NULL,
+  t = capsid_turns, L = capsid_tilings,
+  a = capsid_axes, R = 100, s = 0,
+  facet_outline = F,
   aesthetics = list(),
   width = NULL, height = NULL, elementId = NULL
 ) {
@@ -18,12 +17,11 @@ capsid <- function(
     h = h, k = k, H = ifelse(is.null(H), h, H), K = ifelse(is.null(K), k, K),
     t = as.integer(match.arg(t) == "levo"), L = match.arg(L), a = as.integer(match.arg(a)),
     R = R, s = s,
-    setNames(c(roll, pitch, yaw), c("φ", "θ", "ψ")),
-    setNames(c(penton_fiber, fiber_knob, facet_outline), c("penton_fiber_toggle", "knob_toggle", "facet_toggle")),
+    facet_toggle = facet_outline,
     map_aesthetics_to_js(aesthetics)
   )
   htmlwidgets::createWidget(
-    name = "capsid",
+    name = "net",
     x,
     width = width,
     height = height,
@@ -32,6 +30,6 @@ capsid <- function(
   )
 }
 
-capsid_html <- function(id, style, class, ...) {
+net_html <- function(id, style, class, ...) {
   htmltools::tags$canvas(id = id, style = style, class = class, ...)
 }

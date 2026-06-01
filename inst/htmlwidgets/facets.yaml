@@ -10,4 +10,4 @@ dependencies:
     script:
       - democapsid.min.js
 
-script: capsid.js
+script: facets.js
