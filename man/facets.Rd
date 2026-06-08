@@ -2,25 +2,56 @@
 % Please edit documentation in R/facets.R
 \name{facets}
 \alias{facets}
-\title{facets}
+\title{Render the facets for a capsid model.}
 \usage{
 facets(
   h = 1,
   k = 0,
   H = NULL,
   K = NULL,
-  t = capsid_turns,
-  L = capsid_tilings,
-  a = capsid_axes,
+  t = options_turn,
+  L = options_lattice,
+  a = options_axis,
   R = 100,
-  s = 0,
   facet_outline = F,
   aesthetics = list(),
   width = NULL,
-  height = NULL,
-  elementId = NULL
+  height = NULL
 )
 }
+\arguments{
+\item{h}{the lattice steps to the next pentamer}
+
+\item{k}{the lattice steps to the next pentamer (after turning)}
+
+\item{H}{the lattice steps to the next pentamer}
+
+\item{K}{the lattice steps to the next pentamer (after turning)}
+
+\item{t}{the turn direction ("levo", "dextro")}
+
+\item{L}{the lattice primitive ("hex", "trihex", "snubhex", "rhombitrihex", "dualhex", "dualtrihex", "dualsnubhex", "dualrhombitrihex", "pinwheel-1", "pinwheel-2")}
+
+\item{a}{the axial symmetry ("5", "3", "2")}
+
+\item{R}{the circumradius of the lattice primitive}
+
+\item{facet_outline}{the flag to toggle the facet outline}
+
+\item{aesthetics}{the aesthetic configuration}
+
+\item{width}{the width of the output element}
+
+\item{height}{the height of the output element}
+}
 \description{
-description
+Render the facets for a capsid model.
+}
+\examples{
+\dontrun{
+# Adenovirus
+facets(5, 5, R = 10, aesthetics = list(line = list(size = 1)))
+# Enterobacteriophage T4
+facets(3, 1, 4, 2, R = 25)
+}
 }

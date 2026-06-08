@@ -1,15 +1,23 @@
-capsid_turns <- c("levo", "dextro")
+#' Lattice walk turn directions.
+#' @export
+options_turn <- c("levo", "dextro")
 
-capsid_axes <- c("5", "3", "2")
+#' Capsid symmetry axes.
+#' @export
+options_axis <- c("5", "3", "2")
 
-capsid_tilings <- c(
+#' Capsid lattice options.
+#' @export
+options_lattice <- c(
   "hex", "trihex", "snubhex", "rhombitrihex",
   "dualhex", "dualtrihex", "dualsnubhex", "dualrhombitrihex",
   "pinwheel-1", "pinwheel-2"
 )
 
+#' Default capsid aesthetics.
+#' @export
 capsid_aesthetics <- list(
-  line = list(color = "#000000", alpha = "ff", size = 5.5),
+  line = list(color = "#000000", alpha = "ff", size = 1),
   fiber = list(color = "#eded61", alpha = "ff", size = 6, length = 40),
   knob = list(color = "#ffa500", alpha = "7f", size = 9),
   pentamer = list(
@@ -28,17 +36,17 @@ map_aesthetics_to_js <- function(aesthetics) {
   key1 <- c("color", "alpha", "fiber")
   key2 <- c("color", "alpha", "toggle")
   with(
-    modifyList(capsid_aesthetics, aesthetics),
+    utils::modifyList(capsid_aesthetics, aesthetics),
     c(
-      setNames(line, paste0("line_", names(line))),
-      setNames(fiber, paste0("fiber_", names(fiber))),
-      setNames(knob, paste0("knob_", names(knob))),
-      setNames(pentamer$unit1[key1], paste("mer", key2, "1", sep = "_")),
-      setNames(pentamer$unit2[key1], paste("mer", key2, "2", sep = "_")),
-      setNames(pentamer$unit3[key1], paste("mer", key2, "3", sep = "_")),
-      setNames(hexamer$unit1[key1], paste("mer", key2, "4", sep = "_")),
-      setNames(hexamer$unit2[key1], paste("mer", key2, "5", sep = "_")),
-      setNames(hexamer$unit3[key1], paste("mer", key2, "6", sep = "_"))
+      stats::setNames(line, paste0("line_", names(line))),
+      stats::setNames(fiber, paste0("fiber_", names(fiber))),
+      stats::setNames(knob, paste0("knob_", names(knob))),
+      stats::setNames(pentamer$unit1[key1], paste("mer", key2, "1", sep = "_")),
+      stats::setNames(pentamer$unit2[key1], paste("mer", key2, "2", sep = "_")),
+      stats::setNames(pentamer$unit3[key1], paste("mer", key2, "3", sep = "_")),
+      stats::setNames(hexamer$unit1[key1], paste("mer", key2, "4", sep = "_")),
+      stats::setNames(hexamer$unit2[key1], paste("mer", key2, "5", sep = "_")),
+      stats::setNames(hexamer$unit3[key1], paste("mer", key2, "6", sep = "_"))
     )
   )
 }

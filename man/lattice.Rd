@@ -2,24 +2,53 @@
 % Please edit documentation in R/lattice.R
 \name{lattice}
 \alias{lattice}
-\title{lattice}
+\title{Render the lattice for a capsid model.}
 \usage{
 lattice(
   h = 1,
   k = 0,
   H = NULL,
   K = NULL,
-  t = capsid_turns,
-  L = capsid_tilings,
-  a = capsid_axes,
+  t = options_turn,
+  L = options_lattice,
+  a = options_axis,
   R = 100,
-  s = 0,
   aesthetics = list(),
   width = NULL,
-  height = NULL,
-  elementId = NULL
+  height = NULL
 )
 }
+\arguments{
+\item{h}{the lattice steps to the next pentamer}
+
+\item{k}{the lattice steps to the next pentamer (after turning)}
+
+\item{H}{the lattice steps to the next pentamer}
+
+\item{K}{the lattice steps to the next pentamer (after turning)}
+
+\item{t}{the turn direction ("levo", "dextro")}
+
+\item{L}{the lattice primitive ("hex", "trihex", "snubhex", "rhombitrihex", "dualhex", "dualtrihex", "dualsnubhex", "dualrhombitrihex", "pinwheel-1", "pinwheel-2")}
+
+\item{a}{the axial symmetry ("5", "3", "2")}
+
+\item{R}{the circumradius of the lattice primitive}
+
+\item{aesthetics}{the aesthetic configuration}
+
+\item{width}{the width of the output element}
+
+\item{height}{the height of the output element}
+}
 \description{
-description
+Render the lattice for a capsid model.
+}
+\examples{
+\dontrun{
+# Adenovirus
+lattice(5, 5, R = 10, aesthetics = list(line = list(size = 1)))
+# Enterobacteriophage T4
+lattice(3, 1, 4, 2, R = 25)
+}
 }

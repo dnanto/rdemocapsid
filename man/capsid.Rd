@@ -2,16 +2,16 @@
 % Please edit documentation in R/capsid.R
 \name{capsid}
 \alias{capsid}
-\title{capsid}
+\title{Render a capsid model.}
 \usage{
 capsid(
   h = 1,
   k = 0,
   H = NULL,
   K = NULL,
-  t = capsid_turns,
-  L = capsid_tilings,
-  a = capsid_axes,
+  t = options_turn,
+  L = options_lattice,
+  a = options_axis,
   R = 100,
   s = 0,
   roll = -90,
@@ -22,10 +22,54 @@ capsid(
   facet_outline = F,
   aesthetics = list(),
   width = NULL,
-  height = NULL,
-  elementId = NULL
+  height = NULL
 )
 }
+\arguments{
+\item{h}{the lattice steps to the next pentamer}
+
+\item{k}{the lattice steps to the next pentamer (after turning)}
+
+\item{H}{the lattice steps to the next pentamer}
+
+\item{K}{the lattice steps to the next pentamer (after turning)}
+
+\item{t}{the turn direction ("levo", "dextro")}
+
+\item{L}{the lattice primitive ("hex", "trihex", "snubhex", "rhombitrihex", "dualhex", "dualtrihex", "dualsnubhex", "dualrhombitrihex", "pinwheel-1", "pinwheel-2")}
+
+\item{a}{the axial symmetry ("5", "3", "2")}
+
+\item{R}{the circumradius of the lattice primitive}
+
+\item{s}{the sphericity/cylindricity (percentage normalized from 0 to 1)}
+
+\item{roll}{the roll angle (in degrees)}
+
+\item{pitch}{the pitch angle (in degrees)}
+
+\item{yaw}{the yaw angle (in degrees)}
+
+\item{penton_fiber}{the flag to toggle penton fibers}
+
+\item{fiber_knob}{the flag to toggle the fiber knobs}
+
+\item{facet_outline}{the flag to toggle the facet outline}
+
+\item{aesthetics}{the aesthetic configuration}
+
+\item{width}{the width of the output element}
+
+\item{height}{the height of the output element}
+}
 \description{
-description
+Render a capsid model.
+}
+\examples{
+\dontrun{
+# Adenovirus
+capsid(5, 5, R = 10, aesthetics = list(line = list(size = 1)))
+# Enterobacteriophage T4
+capsid(3, 1, 4, 2, R = 25)
+}
 }
