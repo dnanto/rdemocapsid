@@ -5,8 +5,8 @@ dependencies:
     script:
       - paper-full.min.js
   - name: democapsid
-    version: 2.2.5
-    src: htmlwidgets/lib/democapsid-2.2.5
+    version: 2.2.6
+    src: htmlwidgets/lib/democapsid-2.2.6
     script:
       - democapsid.min.js
 
